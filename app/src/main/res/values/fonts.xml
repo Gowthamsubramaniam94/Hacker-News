@@ -4,6 +4,4 @@
     <string name="roboto_black">sans-serif-black</string>
     <string name="roboto_thin">sans-serif-thin</string>
     <string name="roboto_light">sans-serif-light</string>
-    <string name="roboto_medium">sans-serif-medium</string>
-    <string name="roboto_condensed">sans-serif-condensed</string>
 </resources>

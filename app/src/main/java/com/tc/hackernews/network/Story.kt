@@ -13,7 +13,7 @@ data class Story(
     @SerializedName("title") var storyTitle: String,
     @SerializedName("type") var storyType: String,
     @SerializedName("url") var storyUrl: String
-):Parcelable {
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,

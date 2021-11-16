@@ -135,6 +135,7 @@ class HackerViewModel @Inject constructor(
     private fun getListOfStoriesObserver(): (t: List<Story>) -> Unit {
         return {
             listOfStories.addAll(it)
+
             mStoryLiveData.postValue(Resource(ResourceState.SUCCESS, listOfStories))
             mAddMoreItemLiveData.postValue(!listOfNewsId.isEmpty())
         }

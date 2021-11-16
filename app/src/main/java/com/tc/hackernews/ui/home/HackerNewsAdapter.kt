@@ -16,7 +16,7 @@ class HackerNewsAdapter(
     private val mLayoutInflater: LayoutInflater,
     private val mMoreClickListener: () -> Unit,
     private val mStoryClickListener: (story: Story) -> Unit
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>(),Filterable {
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
 
     /**
      * List of stories
@@ -32,9 +32,15 @@ class HackerNewsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (viewType == R.layout.more_item) {
-            return MoreItemViewHolder(mLayoutInflater.inflate(viewType, parent, false), mMoreClickListener)
+            return MoreItemViewHolder(
+                mLayoutInflater.inflate(viewType, parent, false),
+                mMoreClickListener
+            )
         }
-        return HackerNewsItemViewHolder(mLayoutInflater.inflate(viewType, parent, false), mStoryClickListener)
+        return HackerNewsItemViewHolder(
+            mLayoutInflater.inflate(viewType, parent, false),
+            mStoryClickListener
+        )
     }
 
     override fun getItemCount(): Int {
@@ -88,6 +94,9 @@ class HackerNewsAdapter(
                     val resultList = LinkedList<Story>()
                     for (row in mTempListOfStories) {
                         if (row.storyTitle.toLowerCase(Locale.ROOT)
+                                .contains(
+                                    constraint.toString().toLowerCase(Locale.ROOT)
+                                ) || row.author.toLowerCase(Locale.ROOT)
                                 .contains(constraint.toString().toLowerCase(Locale.ROOT))
                         ) {
                             resultList.add(row)

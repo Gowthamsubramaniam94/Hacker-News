@@ -13,16 +13,16 @@ import dagger.android.support.DaggerAppCompatActivity
  */
 class HackerNewsListActivity : DaggerAppCompatActivity(), StorySelectionListener {
 
-    private var mIsTwoPane: Boolean = false
+    private var isTwoPane: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hacker_news)
-        mIsTwoPane = supportFragmentManager.findFragmentById(R.id.story_detail_fragment) != null
+        isTwoPane = supportFragmentManager.findFragmentById(R.id.story_detail_fragment) != null
     }
 
     override fun onStorySelected(story: Story) {
-        if (mIsTwoPane) {
+        if (isTwoPane) {
             (supportFragmentManager.findFragmentById(R.id.story_detail_fragment) as NewsFragment).refresh(story)
         } else {
             val intent = Intent(this, HackerNewsActivity::class.java)

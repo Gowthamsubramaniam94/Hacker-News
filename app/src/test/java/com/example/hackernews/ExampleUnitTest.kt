@@ -8,6 +8,7 @@ import com.tc.hackernews.ui.HackerViewModel
 import com.tc.hackernews.ui.home.model.ResourceState
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
+import androidx.lifecycle.ViewModelProvider
 import kotlinx.coroutines.DelicateCoroutinesApi
 import org.junit.Test
 

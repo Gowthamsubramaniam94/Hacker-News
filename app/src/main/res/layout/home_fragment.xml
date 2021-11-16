@@ -6,7 +6,6 @@
     android:animateLayoutChanges="true"
     android:orientation="vertical">
 
-
     <EditText
         android:id="@+id/search_list"
         android:layout_width="match_parent"
@@ -14,10 +13,9 @@
         android:layout_margin="10dp"
         android:background="@color/search_btn_color"
         android:drawableRight="@drawable/outline_search"
-        android:hint="Search"
+        android:hint="@string/search_title_author"
         android:inputType="text"
         android:padding="10dp" />
-
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/news_list_container"
