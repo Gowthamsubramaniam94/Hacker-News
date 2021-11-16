@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/error_background_color"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/error_text"
+        style="@style/error_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stub_view"
+        android:layout_centerInParent="true"
+        android:text="@string/error_text"
+        android:textAlignment="center"
+        tools:text="@string/error_text"
+        android:gravity="center_horizontal" />
+
+    <View
+        android:id="@+id/stub_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/retry"
+        style="@style/retry_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stub_view"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

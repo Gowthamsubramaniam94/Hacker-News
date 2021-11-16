@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hacker_background"
+    android:fillViewport="true"
+    android:padding="@dimen/base_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hacker_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/story_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@string/roboto_black"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/title_text_size"
+            tools:text="Hello this is sample title" />
+
+        <TextView
+            android:id="@+id/story_description_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base_margin"
+            android:layout_marginBottom="@dimen/base_margin"
+            android:textSize="@dimen/comment_text_size"
+            tools:text="@string/description" />
+
+        <!--Comments list container-->
+        <LinearLayout
+            android:id="@+id/comments_list_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/comments_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/base_margin"
+                android:layout_marginBottom="@dimen/base_margin"
+                android:fontFamily="@string/roboto_black"
+                android:text="@string/comments"
+                android:textSize="@dimen/comment_text_size" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comments_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!--Loading container-->
+        <LinearLayout
+            android:id="@+id/comments_loading_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/comments_loading_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/loading_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@string/roboto_regular"
+                android:gravity="center_horizontal"
+                android:text="@string/loading_comments"
+                android:textColor="@color/secondary_text_color"
+                android:textSize="@dimen/base_text_size" />
+
+        </LinearLayout>
+
+        <!--Empty comments container-->
+        <TextView
+            android:id="@+id/no_comments_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base_margin"
+            android:fontFamily="@string/roboto_black"
+            android:gravity="center_horizontal"
+            android:text="@string/no_comments_available"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/title_text_size"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
